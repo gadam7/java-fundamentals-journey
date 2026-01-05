@@ -23,11 +23,55 @@
 public class Exercise03_GradeCalculator {
     
     // TODO: Implement getLetterGrade method
+    public static String getLetterGrade(int score) {
+        if (score < 0 || score > 100) {
+            return "Invalid score";
+        } else if (score >= 90) {
+            return "A";
+        } else if (score >= 80) {
+            return "B";
+        } else if (score >= 70) {
+            return "C";
+        } else if (score >= 60) {
+            return "D";
+        } else {
+            return "F";
+        }
+    }
     
     // TODO: BONUS - Implement getGPA method
+    public static double getGPA(String letterGrade) {
+        switch (letterGrade) {
+            case "A":
+                return 4.0;
+            case "B":
+                return 3.0;
+            case "C":
+                return 2.0;
+            case "D":
+                return 1.0;
+            case "F":
+                return 0.0;
+            default:
+                return -1.0; // Invalid grade
+        }
+    }
     
     public static void main(String[] args) {
         // TODO: Test with different scores
         // Test cases: 95, 85, 75, 65, 55
+        int[] testScores = {95, 85, 75, 65, 55};
+        for (int score : testScores) {
+            String grade = getLetterGrade(score);
+            System.out.println("Score: " + score + " => Grade: " + grade);
+        }
+
+        // BONUS: Test GPA calculation
+        System.out.println("\nGPA Calculation:");
+        String[] grades = {"A", "B", "C", "D", "F"};
+        for (String grade : grades) {
+            double gpa = getGPA(grade);
+            System.out.println("Grade: " + grade + " => GPA: " + gpa);
+        }
     }
 }
