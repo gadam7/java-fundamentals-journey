@@ -1,145 +1,144 @@
-# Java Fundamentals Journey 🚀
+# Java Fundamentals Journey
 
-A comprehensive study plan to master Java from scratch, covering Java 17 & 21 (LTS), OOP, and modern Java features.
+A comprehensive learning path for mastering Java fundamentals through hands-on projects and exercises.
 
-## 📚 Learning Path
+## Learning Phases
 
-### Phase 1: Java Basics & Setup (Week 1-2)
-- [ ] Install JDK 17 & 21
-- [ ] Setup development environment (IDE)
-- [ ] Basic syntax and data types
-- [ ] Control flow statements
-- [ ] Methods and parameters
+### Phase 1: Java Basics ✅ (COMPLETED)
+**Status:** Complete  
+**Completion Date:** January 5, 2026
 
-### Phase 2: Object-Oriented Programming (Week 3-4)
-- [ ] Classes and Objects
-- [ ] Encapsulation
-- [ ] Inheritance
-- [ ] Polymorphism
-- [ ] Abstraction
-- [ ] Interfaces
+Core concepts covered:
+- ✅ Variables and Data Types
+- ✅ Operators and Expressions
+- ✅ Control Flow (if/else, switch, loops)
+- ✅ Methods and Functions
+- ✅ Arrays and Basic Collections
 
-### Phase 3: Exception Handling (Week 5)
-- [ ] Try-catch-finally blocks
-- [ ] Checked vs Unchecked exceptions
-- [ ] Custom exceptions
-- [ ] Best practices
-
-### Phase 4: Collections Framework (Week 6-7)
-- [ ] List interface (ArrayList, LinkedList)
-- [ ] Set interface (HashSet, TreeSet)
-- [ ] Map interface (HashMap, TreeMap)
-- [ ] Queue and Deque
-- [ ] Iterators
-
-### Phase 5: Lambda Expressions (Week 8)
-- [ ] Functional interfaces
-- [ ] Lambda syntax
-- [ ] Method references
-- [ ] Built-in functional interfaces
-
-### Phase 6: Streams API (Week 9-10)
-- [ ] Stream creation
-- [ ] Intermediate operations
-- [ ] Terminal operations
-- [ ] Collectors
-- [ ] Parallel streams
-
-### Phase 7: Multithreading & Concurrency (Week 11-12)
-- [ ] Thread basics
-- [ ] Synchronization
-- [ ] ExecutorService
-- [ ] CompletableFuture
-- [ ] Concurrent collections
-
-### Phase 8: Modern Java Features (Week 13-14)
-- [ ] Records
-- [ ] Sealed classes
-- [ ] Pattern matching
-- [ ] Text blocks
-- [ ] Switch expressions
-- [ ] Virtual Threads (Java 21)
-
-## 📂 Repository Structure
-
-```
-java-fundamentals-journey/
-├── 01-basics/
-│   ├── README.md
-│   ├── examples/
-│   ├── exercises/
-│   └── solutions/
-├── 02-oop/
-│   ├── README.md
-│   ├── examples/
-│   ├── exercises/
-│   └── solutions/
-├── 03-exceptions/
-│   ├── README.md
-│   ├── examples/
-│   ├── exercises/
-│   └── solutions/
-├── 04-collections/
-│   ├── README.md
-│   ├── examples/
-│   ├── exercises/
-│   └── solutions/
-├── 05-lambdas/
-│   ├── README.md
-│   ├── examples/
-│   ├── exercises/
-│   └── solutions/
-├── 06-streams/
-│   ├── README.md
-│   ├── examples/
-│   ├── exercises/
-│   └── solutions/
-├── 07-concurrency/
-│   ├── README.md
-│   ├── examples/
-│   ├── exercises/
-│   └── solutions/
-└── 08-modern-features/
-    ├── README.md
-    ├── examples/
-    ├── exercises/
-    └── solutions/
-```
-
-## 🎯 Progress Tracking
-
-Track your progress by checking off the milestones above and committing your code examples and exercises regularly.
-
-## 📝 Study Tips
-
-- **Hands-on practice**: Write code daily, even if it's just 30 minutes
-- **Complete exercises**: Finish all exercises before moving to the next topic
-- **Build projects**: Apply what you learn in small projects
-- **Review regularly**: Revisit previous topics to reinforce learning
-- **Ask questions**: Document your doubts and research answers
-
-## 🏆 Milestones
-
-- [ ] Complete Phase 1: Java Basics
-- [ ] Complete Phase 2: OOP
-- [ ] Complete Phase 3: Exceptions
-- [ ] Complete Phase 4: Collections
-- [ ] Complete Phase 5: Lambdas
-- [ ] Complete Phase 6: Streams
-- [ ] Complete Phase 7: Concurrency
-- [ ] Complete Phase 8: Modern Features
-- [ ] Build a final project using all concepts
-
-## 📖 Resources
-
-- Official Java Documentation: https://docs.oracle.com/en/java/
-- Java Tutorials: https://dev.java/learn/
-- JDK 17 Features: https://openjdk.org/projects/jdk/17/
-- JDK 21 Features: https://openjdk.org/projects/jdk/21/
+**Projects Completed:**
+- Simple Calculator
+- Number Guessing Game
+- Basic Array Operations
 
 ---
 
-**Start Date**: 2026-01-05  
-**Target Completion**: ~14 weeks
+### Phase 2: Object-Oriented Programming (In Progress)
+**Status:** Active  
+**Focus:** Building a Progressive Todo List Application
 
-Good luck on your Java journey! 🎓
+#### Progressive Todo List Project
+
+A multi-stage project designed to progressively introduce OOP concepts:
+
+**Stage 1: Basic Task Management**
+- Create Task class with properties (title, description, status)
+- Implement basic CRUD operations
+- Use ArrayList for task storage
+- Practice encapsulation with getters/setters
+
+**Stage 2: Enhanced Features**
+- Add priority levels and due dates
+- Implement task categories
+- Create TaskManager class for business logic
+- Practice class relationships and composition
+
+**Stage 3: Advanced OOP Concepts**
+- Implement interfaces (Comparable, Serializable)
+- Add inheritance (different task types)
+- Use polymorphism for task behaviors
+- Implement design patterns (Factory, Observer)
+
+**Stage 4: Persistence & UI**
+- File I/O for saving/loading tasks
+- Exception handling
+- Simple console-based menu system
+- Input validation and error handling
+
+**Current Stage:** Stage 1 - Basic Task Management
+
+---
+
+### Phase 3: Advanced Topics (Upcoming)
+- Collections Framework (deep dive)
+- Generics
+- Exception Handling (advanced)
+- File I/O and Serialization
+- Basic Multithreading
+
+### Phase 4: Modern Java Features (Planned)
+- Streams and Lambda Expressions
+- Optional and Functional Interfaces
+- Modern Java APIs
+- Best Practices and Design Patterns
+
+## Repository Structure
+
+```
+java-fundamentals-journey/
+├── phase1-basics/
+│   ├── calculator/
+│   ├── number-game/
+│   └── array-operations/
+├── phase2-oop/
+│   └── todo-list/
+│       ├── stage1-basic/
+│       ├── stage2-enhanced/
+│       ├── stage3-advanced/
+│       └── stage4-persistence/
+├── phase3-advanced/
+└── phase4-modern/
+```
+
+## Getting Started
+
+### Prerequisites
+- Java Development Kit (JDK) 11 or higher
+- A Java IDE (IntelliJ IDEA, Eclipse, or VS Code)
+- Basic understanding of programming concepts
+
+### Running the Projects
+
+Each project contains its own README with specific instructions. Generally:
+
+```bash
+# Navigate to the project directory
+cd phase2-oop/todo-list/stage1-basic
+
+# Compile the Java files
+javac *.java
+
+# Run the main class
+java Main
+```
+
+## Learning Resources
+
+- [Official Java Documentation](https://docs.oracle.com/en/java/)
+- [Java Tutorials by Oracle](https://docs.oracle.com/javase/tutorial/)
+- Effective Java by Joshua Bloch
+- Head First Java by Kathy Sierra
+
+## Progress Tracking
+
+- **Phase 1:** ✅ 100% Complete
+- **Phase 2:** 🔄 In Progress (25%)
+- **Phase 3:** ⏳ Not Started
+- **Phase 4:** ⏳ Not Started
+
+## Contributing
+
+This is a personal learning repository, but suggestions and feedback are welcome! Feel free to open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Thanks to the Java community for excellent learning resources
+- Inspired by various Java learning paths and best practices
+
+---
+
+**Last Updated:** January 5, 2026  
+**Current Focus:** Progressive Todo List - Stage 1 (Basic Task Management)
