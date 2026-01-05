@@ -29,7 +29,7 @@ public class TodoListApp {
     private static boolean[] taskStatus = new boolean[MAX_TASKS];
     private static int taskCount = 0;
     
-    private static Scanner scanner = new Scanner(System.in);
+    private static Scanner input = new Scanner(System.in);
     
     /**
      * Main method - Entry point of the application
@@ -37,7 +37,7 @@ public class TodoListApp {
     public static void main(String[] args) {
         System.out.println("╔════════════════════════════════════════╗");
         System.out.println("║   📝 Todo List Manager v1.0            ║");
-        System.out.println("║   Phase 1: Java Basics Edition        ║");
+        System.out.println("║   Phase 1: Java Basics Edition         ║");
         System.out.println("╚════════════════════════════════════════╝");
         System.out.println();
         
@@ -58,9 +58,15 @@ public class TodoListApp {
                     markTaskComplete();
                     break;
                 case 4:
-                    deleteTask();
+                    viewCompletedTasks();
                     break;
                 case 5:
+                    clearAllCompletedTasks();
+                    break;
+                case 6:
+                    deleteTask();
+                    break;
+                case 7:
                     running = false;
                     System.out.println("\n👋 Thanks for using Todo List Manager! Goodbye!");
                     break;
@@ -73,7 +79,7 @@ public class TodoListApp {
             }
         }
         
-        scanner.close();
+        input.close();
     }
     
     /**
@@ -86,10 +92,12 @@ public class TodoListApp {
         System.out.println("1. ➕ Add New Task");
         System.out.println("2. 📋 View All Tasks");
         System.out.println("3. ✅ Mark Task as Complete");
-        System.out.println("4. ❌ Delete Task");
-        System.out.println("5. 🚪 Exit");
+        System.out.println("4. ✅ View Completed Tasks");
+        System.out.println("5. 🗑️ Clear All Completed Tasks");
+        System.out.println("6. ❌ Delete Task");
+        System.out.println("7. 🚪 Exit");
         System.out.println("=".repeat(40));
-        System.out.print("Enter your choice (1-5): ");
+        System.out.print("Enter your choice (1-7): ");
     }
     
     /**
@@ -98,7 +106,7 @@ public class TodoListApp {
      */
     private static int getUserChoice() {
         try {
-            return Integer.parseInt(scanner.nextLine());
+            return Integer.parseInt(input.nextLine());
         } catch (NumberFormatException e) {
             return -1; // Invalid input
         }
@@ -118,7 +126,7 @@ public class TodoListApp {
         }
         
         System.out.print("Enter task title: ");
-        String title = scanner.nextLine().trim();
+        String title = input.nextLine().trim();
         
         if (title.isEmpty()) {
             System.out.println("❌ Error: Task title cannot be empty!");
@@ -126,7 +134,7 @@ public class TodoListApp {
         }
         
         System.out.print("Enter task description: ");
-        String description = scanner.nextLine().trim();
+        String description = input.nextLine().trim();
         
         // Add task to arrays
         taskTitles[taskCount] = title;
@@ -160,6 +168,28 @@ public class TodoListApp {
         
         System.out.println("\n" + "=".repeat(40));
         System.out.println("Total: " + taskCount + " task(s) | Completed: " + getCompletedCount() + " | Pending: " + getPendingCount());
+    }
+
+    private static void viewCompletedTasks() {
+        System.out.println("\n" + "=".repeat(40));
+        System.out.println("        COMPLETED TASKS");
+        System.out.println("=".repeat(40));
+
+        boolean hasCompleted = false;
+        for (int i = 0; i < taskCount; i++) {
+            if (taskStatus[i]) {
+                String status = "✅";
+                String strikethrough = "(DONE)";
+
+                System.out.println("\n" + (i + 1) + ". " + status + " " + taskTitles[i] + " " + strikethrough);
+                System.out.println("   Description: " + taskDescriptions[i]);
+                hasCompleted = true;
+            }
+        }
+
+        if (!hasCompleted) {
+            System.out.println("📭 No completed tasks yet!");
+        }
     }
     
     /**
@@ -255,6 +285,32 @@ public class TodoListApp {
         System.out.println("🗑️  Task '" + deletedTitle + "' deleted successfully!");
         System.out.println("Total tasks remaining: " + taskCount);
     }
+
+    private static void clearAllCompletedTasks() {
+        int i = 0;
+        while (i < taskCount) {
+            if (taskStatus[i]) {
+                // Shift all elements after the deleted task
+                for (int j = i; j < taskCount - 1; j++) {
+                    taskTitles[j] = taskTitles[j + 1];
+                    taskDescriptions[j] = taskDescriptions[j + 1];
+                    taskStatus[j] = taskStatus[j + 1];
+                }
+
+                // Clear the last element
+                taskTitles[taskCount - 1] = null;
+                taskDescriptions[taskCount - 1] = null;
+                taskStatus[taskCount - 1] = false;
+
+                taskCount--;
+            } else {
+                i++;
+            }
+        }
+
+        System.out.println("🗑️  All completed tasks cleared successfully!");
+        System.out.println("Total tasks remaining: " + taskCount);
+    }
     
     /**
      * Get count of completed tasks
@@ -283,6 +339,6 @@ public class TodoListApp {
      */
     private static void pressEnterToContinue() {
         System.out.print("\nPress Enter to continue...");
-        scanner.nextLine();
+        input.nextLine();
     }
 }
